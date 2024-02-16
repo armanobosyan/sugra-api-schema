@@ -1,0 +1,979 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sugra Systems API for Economics Full Schema",
+    "description": "Sugra Systems, Inc. AI Powere FinTech behinde the Sugra AI solution",
+    "version": "1.0.3"
+  },
+  "tags": [],
+  "paths": {
+    "/v1/economics/countries-overview": {
+      "get": {
+        "summary": "Get Economic Indicators by Contries",
+        "operationId": "getEconomicsCountriesOverview",
+        "description": "Retrieves an overview of various economic indicators from the G20 countries .",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "description": "Filter by country name to retrieve its economic indicators.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with economic indicators",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Country": {
+                        "type": "string",
+                        "example": "United States"
+                      },
+                      "CurrentAccount": {
+                        "type": "string",
+                        "example": "-3.70"
+                      },
+                      "DebtGDP": {
+                        "type": "string",
+                        "example": "129.00"
+                      },
+                      "GDP": {
+                        "type": "string",
+                        "example": "25440"
+                      },
+                      "GDPGrowth": {
+                        "type": "string",
+                        "example": "3.30"
+                      },
+                      "GovBudget": {
+                        "type": "string",
+                        "example": "-5.80"
+                      },
+                      "InflationRate": {
+                        "type": "string",
+                        "example": "3.40"
+                      },
+                      "InterestRate": {
+                        "type": "string",
+                        "example": "5.50"
+                      },
+                      "JoblessRate": {
+                        "type": "string",
+                        "example": "3.70"
+                      },
+                      "Population": {
+                        "type": "string",
+                        "example": "334.23"
+                      }
+                    },
+                    "required": [
+                      "Country",
+                      "CurrentAccount",
+                      "DebtGDP",
+                      "GDP",
+                      "GDPGrowth",
+                      "GovBudget",
+                      "InflationRate",
+                      "InterestRate",
+                      "JoblessRate",
+                      "Population"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request or error in query parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requested country not found or no data available",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/overview": {
+      "get": {
+        "summary": "Get Country Economics Indicators Overview",
+        "operationId": "getEconomicsOverview",
+        "description": "Retrieves an overview of various economic indicators from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which economic indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific related indicator (e.g., 'Currency', 'GDP Growth Rate').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with economic indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "GDP Growth Rate"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "2.5%"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "2.3%"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "5.1%"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "-2.8%"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "%"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "Q2 2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requested country not found or no data available",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/gdp": {
+      "get": {
+        "summary": "Get GDP Related Indicators",
+        "operationId": "getEconomicsGDP",
+        "description": "Retrieves information on GDP related economic indicators from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which GDP related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific GDP-related indicator (e.g., 'GDP Growth Rate', 'GDP Annual Growth Rate').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with GDP related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "GDP Annual Growth Rate"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "3.0%"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "2.7%"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "13.4%"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "-2.9%"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "%"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "Q2 2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/labour": {
+      "get": {
+        "summary": "Get Labour Related Indicators",
+        "operationId": "getEconomicsLabour",
+        "description": "Retrieves information on labor-related economic indicators from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which labor-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific labor-related indicator (e.g., 'Unemployment Rate', 'Non Farm Payrolls').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with labor related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Unemployment Rate"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "5.0%"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "5.2%"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "10.0%"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "3.5%"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "%"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "August 2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/prices": {
+      "get": {
+        "summary": "Get Prices Related Indicators",
+        "operationId": "getEconomicsPrices",
+        "description": "Retrieves information on price-related economic indicators, including inflation rates, consumer price indexes, and more from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which price-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific price-related indicator (e.g., 'Inflation Rate', 'Consumer Price Index CPI').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with price related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Inflation Rate"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "2.4%"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "2.2%"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "5.4%"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "0.1%"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "%"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "July 2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/health": {
+        "get": {
+          "summary": "Get Health Related Indicators",
+          "operationId": "getEconomicsHealth",
+          "description": "Retrieves information on health-related economic indicators, such as vaccination rates, coronavirus cases, and healthcare infrastructure, from the specified country.",
+          "parameters": [
+            {
+              "name": "country",
+              "in": "path",
+              "required": true,
+              "description": "The country for which health-related indicators are being requested.",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Related",
+              "in": "query",
+              "description": "Filter by a specific health-related indicator (e.g., 'Coronavirus Vaccination Rate', 'Hospital Beds').",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response with health related indicators data.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "Related": {
+                          "type": "string",
+                          "example": "Coronavirus Cases"
+                        },
+                        "Last": {
+                          "type": "string",
+                          "example": "500,000"
+                        },
+                        "Previous": {
+                          "type": "string",
+                          "example": "495,000"
+                        },
+                        "Highest": {
+                          "type": "string",
+                          "example": "600,000"
+                        },
+                        "Lowest": {
+                          "type": "string",
+                          "example": "0"
+                        },
+                        "Unit": {
+                          "type": "string",
+                          "example": "cases"
+                        },
+                        "Reference": {
+                          "type": "string",
+                          "example": "August 2023"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error when failing to retrieve data."
+            }
+          }
+        }
+    },
+    "/v1/economics/{country}/money": {
+      "get": {
+        "summary": "Get Money Related Indicators",
+        "operationId": "getEconomicsMoney",
+        "description": "Retrieves information on money-related economic indicators, including interest rates, money supply, and bank balance sheets, from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which money-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific money-related indicator (e.g., 'Interest Rate', 'Money Supply M1').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with money related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Interest Rate"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "1.5%"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "1.25%"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "5.25%"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "0.25%"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "%"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "September 2023"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    }
+    },
+    "/v1/economics/{country}/trade": {
+      "get": {
+        "summary": "Get Trade Related Indicators",
+        "operationId": "getEconomicsTrade",
+        "description": "Retrieves information on trade-related economic indicators, such as balance of trade, export and import volumes, and terms of trade, from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which trade-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific trade-related indicator (e.g., 'Balance of Trade', 'Exports').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with trade related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Balance of Trade"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "$500M"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "$450M"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "$1B"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "-$200M"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "USD"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "Q3 2023"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    }
+    },
+    "/v1/economics/{country}/government": {
+      "get": {
+        "summary": "Get Government Related Indicators",
+        "operationId": "getEconomicsGovernment",
+        "description": "Retrieves information on government-related economic indicators, including government debt, budget values, and government spending, from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which government-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific government-related indicator (e.g., 'Government Debt to GDP', 'Government Budget').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with government related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Government Debt to GDP"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "107.8%"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "106.6%"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "120.3%"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "31.7%"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "%"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/business": {
+      "get": {
+        "summary": "Get Business Related Indicators",
+        "operationId": "getEconomicsBusiness",
+        "description": "Retrieves information on business-related economic indicators, such as PMI, business confidence, and industrial output, from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which business-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific business-related indicator (e.g., 'Business Confidence', 'Manufacturing PMI').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with business related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Manufacturing PMI"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "52.6"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "51.3"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "61.1"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "38.2"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "Index Points"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "September 2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    },
+    "/v1/economics/{country}/consumer": {
+        "get": {
+          "summary": "Get Consumer Related Indicators",
+          "operationId": "getEconomicsConsumer",
+          "description": "Retrieves information on consumer-related economic indicators, covering aspects like consumer confidence, retail sales, and personal income, from the specified country.",
+          "parameters": [
+            {
+              "name": "country",
+              "in": "path",
+              "required": true,
+              "description": "The country for which consumer-related indicators are being requested.",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Related",
+              "in": "query",
+              "description": "Filter by a specific consumer-related indicator (e.g., 'Consumer Confidence', 'Retail Sales MoM').",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response with consumer related indicators data.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "Related": {
+                          "type": "string",
+                          "example": "Retail Sales MoM"
+                        },
+                        "Last": {
+                          "type": "string",
+                          "example": "0.5%"
+                        },
+                        "Previous": {
+                          "type": "string",
+                          "example": "0.3%"
+                        },
+                        "Highest": {
+                          "type": "string",
+                          "example": "2.1%"
+                        },
+                        "Lowest": {
+                          "type": "string",
+                          "example": "-1.8%"
+                        },
+                        "Unit": {
+                          "type": "string",
+                          "example": "%"
+                        },
+                        "Reference": {
+                          "type": "string",
+                          "example": "August 2023"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error when failing to retrieve data."
+            }
+          }
+        }
+
+    },
+    "/v1/economics/{country}/housing": {
+      "get": {
+        "summary": "Get Housing Related Indicators",
+        "operationId": "getEconomicsHousing",
+        "description": "Retrieves information on housing-related economic indicators, including data on housing starts, building permits, and home sales, from the specified country.",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "description": "The country for which housing-related indicators are being requested.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Related",
+            "in": "query",
+            "description": "Filter by a specific housing-related indicator (e.g., 'Building Permits', 'Housing Starts').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with housing related indicators data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Related": {
+                        "type": "string",
+                        "example": "Building Permits"
+                      },
+                      "Last": {
+                        "type": "string",
+                        "example": "1,300,000"
+                      },
+                      "Previous": {
+                        "type": "string",
+                        "example": "1,250,000"
+                      },
+                      "Highest": {
+                        "type": "string",
+                        "example": "2,273,000"
+                      },
+                      "Lowest": {
+                        "type": "string",
+                        "example": "513,000"
+                      },
+                      "Unit": {
+                        "type": "string",
+                        "example": "Units"
+                      },
+                      "Reference": {
+                        "type": "string",
+                        "example": "September 2023"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error when failing to retrieve data."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  },
+  "servers": [
+    {
+      "url": "https://api.economics.sugra.ai",
+      "description": "Prod Economics Env"
+    }
+  ]
+}

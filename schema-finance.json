@@ -1,0 +1,3578 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sugra Systems API for Finance Full Schema",
+    "description": "Sugra Systems, Inc. AI Powere FinTech behinde the Sugra AI solution",
+    "version": "1.0.3"
+  },
+  "tags": [],
+  "paths": {
+    "/v1/quotes/{symbol}/detailed-info": {
+      "get": {
+        "summary": "Retrieves all available information for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve detailed information for a specific stock symbol.",
+        "operationId": "GetStockDetailedInfo",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol to retrieve information for.",
+            "required": true,
+            "example": "BAC",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All available information for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "52WeekChange": {
+                      "type": "number"
+                    },
+                    "SandP52WeekChange": {
+                      "type": "number"
+                    },
+                    "address1": {
+                      "type": "string"
+                    },
+                    "address2": {
+                      "type": "string"
+                    },
+                    "ask": {
+                      "type": "number"
+                    },
+                    "askSize": {
+                      "type": "integer"
+                    },
+                    "auditRisk": {
+                      "type": "integer"
+                    },
+                    "averageDailyVolume10Day": {
+                      "type": "integer"
+                    },
+                    "averageVolume": {
+                      "type": "integer"
+                    },
+                    "averageVolume10days": {
+                      "type": "integer"
+                    },
+                    "beta": {
+                      "type": "number"
+                    },
+                    "bid": {
+                      "type": "number"
+                    },
+                    "bidSize": {
+                      "type": "integer"
+                    },
+                    "boardRisk": {
+                      "type": "integer"
+                    },
+                    "bookValue": {
+                      "type": "number"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "companyOfficers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "age": {
+                            "type": "integer"
+                          },
+                          "exercisedValue": {
+                            "type": "integer"
+                          },
+                          "fiscalYear": {
+                            "type": "integer"
+                          },
+                          "maxAge": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "totalPay": {
+                            "type": "integer"
+                          },
+                          "unexercisedValue": {
+                            "type": "integer"
+                          },
+                          "yearBorn": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "title",
+                          "unexercisedValue"
+                        ]
+                      }
+                    },
+                    "compensationAsOfEpochDate": {
+                      "type": "integer"
+                    },
+                    "compensationRisk": {
+                      "type": "integer"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "currentPrice": {
+                      "type": "number"
+                    },
+                    "dateShortInterest": {
+                      "type": "integer"
+                    },
+                    "dayHigh": {
+                      "type": "number"
+                    },
+                    "dayLow": {
+                      "type": "number"
+                    },
+                    "dividendRate": {
+                      "type": "number"
+                    },
+                    "dividendYield": {
+                      "type": "number"
+                    },
+                    "earningsGrowth": {
+                      "type": "number"
+                    },
+                    "earningsQuarterlyGrowth": {
+                      "type": "number"
+                    },
+                    "enterpriseToRevenue": {
+                      "type": "number"
+                    },
+                    "enterpriseValue": {
+                      "type": "integer"
+                    },
+                    "exDividendDate": {
+                      "type": "integer"
+                    },
+                    "exchange": {
+                      "type": "string"
+                    },
+                    "fiftyDayAverage": {
+                      "type": "number"
+                    },
+                    "fiftyTwoWeekHigh": {
+                      "type": "integer"
+                    },
+                    "fiftyTwoWeekLow": {
+                      "type": "number"
+                    },
+                    "financialCurrency": {
+                      "type": "string"
+                    },
+                    "firstTradeDateEpochUtc": {
+                      "type": "integer"
+                    },
+                    "fiveYearAvgDividendYield": {
+                      "type": "number"
+                    },
+                    "floatShares": {
+                      "type": "integer"
+                    },
+                    "forwardEps": {
+                      "type": "number"
+                    },
+                    "forwardPE": {
+                      "type": "number"
+                    },
+                    "fullTimeEmployees": {
+                      "type": "integer"
+                    },
+                    "gmtOffSetMilliseconds": {
+                      "type": "integer"
+                    },
+                    "governanceEpochDate": {
+                      "type": "integer"
+                    },
+                    "heldPercentInsiders": {
+                      "type": "number"
+                    },
+                    "heldPercentInstitutions": {
+                      "type": "number"
+                    },
+                    "impliedSharesOutstanding": {
+                      "type": "integer"
+                    },
+                    "industry": {
+                      "type": "string"
+                    },
+                    "industryDisp": {
+                      "type": "string"
+                    },
+                    "industryKey": {
+                      "type": "string"
+                    },
+                    "lastDividendDate": {
+                      "type": "integer"
+                    },
+                    "lastDividendValue": {
+                      "type": "number"
+                    },
+                    "lastFiscalYearEnd": {
+                      "type": "integer"
+                    },
+                    "lastSplitDate": {
+                      "type": "integer"
+                    },
+                    "lastSplitFactor": {
+                      "type": "string"
+                    },
+                    "longBusinessSummary": {
+                      "type": "string"
+                    },
+                    "longName": {
+                      "type": "string"
+                    },
+                    "marketCap": {
+                      "type": "integer"
+                    },
+                    "maxAge": {
+                      "type": "integer"
+                    },
+                    "messageBoardId": {
+                      "type": "string"
+                    },
+                    "mostRecentQuarter": {
+                      "type": "integer"
+                    },
+                    "netIncomeToCommon": {
+                      "type": "integer"
+                    },
+                    "nextFiscalYearEnd": {
+                      "type": "integer"
+                    },
+                    "numberOfAnalystOpinions": {
+                      "type": "integer"
+                    },
+                    "open": {
+                      "type": "number"
+                    },
+                    "operatingMargins": {
+                      "type": "number"
+                    },
+                    "overallRisk": {
+                      "type": "integer"
+                    },
+                    "payoutRatio": {
+                      "type": "number"
+                    },
+                    "pegRatio": {
+                      "type": "number"
+                    },
+                    "phone": {
+                      "type": "string"
+                    },
+                    "previousClose": {
+                      "type": "number"
+                    },
+                    "priceHint": {
+                      "type": "integer"
+                    },
+                    "priceToBook": {
+                      "type": "number"
+                    },
+                    "priceToSalesTrailing12Months": {
+                      "type": "number"
+                    },
+                    "profitMargins": {
+                      "type": "number"
+                    },
+                    "quoteType": {
+                      "type": "string"
+                    },
+                    "recommendationKey": {
+                      "type": "string"
+                    },
+                    "recommendationMean": {
+                      "type": "number"
+                    },
+                    "regularMarketDayHigh": {
+                      "type": "number"
+                    },
+                    "regularMarketDayLow": {
+                      "type": "number"
+                    },
+                    "regularMarketOpen": {
+                      "type": "number"
+                    },
+                    "regularMarketPreviousClose": {
+                      "type": "number"
+                    },
+                    "regularMarketVolume": {
+                      "type": "integer"
+                    },
+                    "returnOnAssets": {
+                      "type": "number"
+                    },
+                    "returnOnEquity": {
+                      "type": "number"
+                    },
+                    "revenueGrowth": {
+                      "type": "number"
+                    },
+                    "revenuePerShare": {
+                      "type": "number"
+                    },
+                    "sector": {
+                      "type": "string"
+                    },
+                    "sectorDisp": {
+                      "type": "string"
+                    },
+                    "sectorKey": {
+                      "type": "string"
+                    },
+                    "shareHolderRightsRisk": {
+                      "type": "integer"
+                    },
+                    "sharesOutstanding": {
+                      "type": "integer"
+                    },
+                    "sharesPercentSharesOut": {
+                      "type": "number"
+                    },
+                    "sharesShort": {
+                      "type": "integer"
+                    },
+                    "sharesShortPreviousMonthDate": {
+                      "type": "integer"
+                    },
+                    "sharesShortPriorMonth": {
+                      "type": "integer"
+                    },
+                    "shortName": {
+                      "type": "string"
+                    },
+                    "shortPercentOfFloat": {
+                      "type": "number"
+                    },
+                    "shortRatio": {
+                      "type": "number"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "symbol": {
+                      "type": "string"
+                    },
+                    "targetHighPrice": {
+                      "type": "number"
+                    },
+                    "targetLowPrice": {
+                      "type": "number"
+                    },
+                    "targetMeanPrice": {
+                      "type": "number"
+                    },
+                    "targetMedianPrice": {
+                      "type": "number"
+                    },
+                    "timeZoneFullName": {
+                      "type": "string"
+                    },
+                    "timeZoneShortName": {
+                      "type": "string"
+                    },
+                    "totalCash": {
+                      "type": "integer"
+                    },
+                    "totalCashPerShare": {
+                      "type": "number"
+                    },
+                    "totalDebt": {
+                      "type": "integer"
+                    },
+                    "totalRevenue": {
+                      "type": "integer"
+                    },
+                    "trailingAnnualDividendRate": {
+                      "type": "number"
+                    },
+                    "trailingAnnualDividendYield": {
+                      "type": "number"
+                    },
+                    "trailingEps": {
+                      "type": "number"
+                    },
+                    "trailingPE": {
+                      "type": "number"
+                    },
+                    "trailingPegRatio": {
+                      "type": "number"
+                    },
+                    "twoHundredDayAverage": {
+                      "type": "number"
+                    },
+                    "underlyingSymbol": {
+                      "type": "string"
+                    },
+                    "uuid": {
+                      "type": "string"
+                    },
+                    "volume": {
+                      "type": "integer"
+                    },
+                    "website": {
+                      "type": "string"
+                    },
+                    "zip": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "52WeekChange",
+                    "SandP52WeekChange",
+                    "address1",
+                    "address2",
+                    "ask",
+                    "askSize",
+                    "auditRisk",
+                    "averageDailyVolume10Day",
+                    "averageVolume",
+                    "averageVolume10days",
+                    "beta",
+                    "bid",
+                    "bidSize",
+                    "boardRisk",
+                    "bookValue",
+                    "city",
+                    "companyOfficers",
+                    "compensationAsOfEpochDate",
+                    "compensationRisk",
+                    "country",
+                    "currency",
+                    "currentPrice",
+                    "dateShortInterest",
+                    "dayHigh",
+                    "dayLow",
+                    "dividendRate",
+                    "dividendYield",
+                    "earningsGrowth",
+                    "earningsQuarterlyGrowth",
+                    "enterpriseToRevenue",
+                    "enterpriseValue",
+                    "exDividendDate",
+                    "exchange",
+                    "fiftyDayAverage",
+                    "fiftyTwoWeekHigh",
+                    "fiftyTwoWeekLow",
+                    "financialCurrency",
+                    "firstTradeDateEpochUtc",
+                    "fiveYearAvgDividendYield",
+                    "floatShares",
+                    "forwardEps",
+                    "forwardPE",
+                    "fullTimeEmployees",
+                    "gmtOffSetMilliseconds",
+                    "governanceEpochDate",
+                    "heldPercentInsiders",
+                    "heldPercentInstitutions",
+                    "impliedSharesOutstanding",
+                    "industry",
+                    "industryDisp",
+                    "industryKey",
+                    "lastDividendDate",
+                    "lastDividendValue",
+                    "lastFiscalYearEnd",
+                    "lastSplitDate",
+                    "lastSplitFactor",
+                    "longBusinessSummary",
+                    "longName",
+                    "marketCap",
+                    "maxAge",
+                    "messageBoardId",
+                    "mostRecentQuarter",
+                    "netIncomeToCommon",
+                    "nextFiscalYearEnd",
+                    "numberOfAnalystOpinions",
+                    "open",
+                    "operatingMargins",
+                    "overallRisk",
+                    "payoutRatio",
+                    "pegRatio",
+                    "phone",
+                    "previousClose",
+                    "priceHint",
+                    "priceToBook",
+                    "priceToSalesTrailing12Months",
+                    "profitMargins",
+                    "quoteType",
+                    "recommendationKey",
+                    "recommendationMean",
+                    "regularMarketDayHigh",
+                    "regularMarketDayLow",
+                    "regularMarketOpen",
+                    "regularMarketPreviousClose",
+                    "regularMarketVolume",
+                    "returnOnAssets",
+                    "returnOnEquity",
+                    "revenueGrowth",
+                    "revenuePerShare",
+                    "sector",
+                    "sectorDisp",
+                    "sectorKey",
+                    "shareHolderRightsRisk",
+                    "sharesOutstanding",
+                    "sharesPercentSharesOut",
+                    "sharesShort",
+                    "sharesShortPreviousMonthDate",
+                    "sharesShortPriorMonth",
+                    "shortName",
+                    "shortPercentOfFloat",
+                    "shortRatio",
+                    "state",
+                    "symbol",
+                    "targetHighPrice",
+                    "targetLowPrice",
+                    "targetMeanPrice",
+                    "targetMedianPrice",
+                    "timeZoneFullName",
+                    "timeZoneShortName",
+                    "totalCash",
+                    "totalCashPerShare",
+                    "totalDebt",
+                    "totalRevenue",
+                    "trailingAnnualDividendRate",
+                    "trailingAnnualDividendYield",
+                    "trailingEps",
+                    "trailingPE",
+                    "trailingPegRatio",
+                    "twoHundredDayAverage",
+                    "underlyingSymbol",
+                    "uuid",
+                    "volume",
+                    "website",
+                    "zip"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/price": {
+      "get": {
+        "summary": "Get Stock Price",
+        "description": "Retrieves detailed price information including current price, open, previous close, day high, day low, volume, market cap, and average prices for a given stock symbol.",
+        "operationId": "getStockPrice",
+        "tags": [
+          "Stock Price"
+        ],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve detailed price information.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "AAPL"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with detailed stock price information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "currentPrice": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The current price of the stock."
+                    },
+                    "open": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The opening price of the stock for the trading day."
+                    },
+                    "previousClose": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The closing price of the stock from the previous trading day."
+                    },
+                    "dayHigh": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The highest price of the stock for the current trading day."
+                    },
+                    "dayLow": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The lowest price of the stock for the current trading day."
+                    },
+                    "volume": {
+                      "type": "integer",
+                      "description": "The trading volume of the stock."
+                    },
+                    "marketCap": {
+                      "type": "number",
+                      "description": "The market capitalization of the stock."
+                    },
+                    "fiftyDayAverage": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The 50-day moving average price of the stock."
+                    },
+                    "fiftyTwoWeekHigh": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The highest price of the stock in the last 52 weeks."
+                    },
+                    "fiftyTwoWeekLow": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The lowest price of the stock in the last 52 weeks."
+                    },
+                    "twoHundredDayAverage": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The 200-day moving average price of the stock."
+                    }
+                  },
+                  "required": [
+                    "currentPrice",
+                    "open",
+                    "previousClose",
+                    "dayHigh",
+                    "dayLow",
+                    "volume",
+                    "marketCap",
+                    "fiftyDayAverage",
+                    "fiftyTwoWeekHigh",
+                    "fiftyTwoWeekLow",
+                    "twoHundredDayAverage"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid symbol format."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/dividend": {
+      "get": {
+        "summary": "Get Stock Dividend Information",
+        "description": "Retrieves dividend information for a given stock symbol, including dividend yield, rate, ex-dividend date, and last dividend details.",
+        "operationId": "getStockDividend",
+        "tags": [
+          "Dividend Information"
+        ],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve dividend information.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "AAPL"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with the stock's dividend information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dividendYield": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The dividend yield of the stock."
+                    },
+                    "dividendRate": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The annual dividend rate of the stock."
+                    },
+                    "exDividendDate": {
+                      "type": "integer",
+                      "description": "The ex-dividend date represented as a Unix timestamp."
+                    },
+                    "lastDividendDate": {
+                      "type": "integer",
+                      "description": "The date of the last dividend payment represented as a Unix timestamp."
+                    },
+                    "lastDividendValue": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "The value of the last dividend payment."
+                    }
+                  },
+                  "required": [
+                    "dividendYield",
+                    "dividendRate",
+                    "exDividendDate",
+                    "lastDividendDate",
+                    "lastDividendValue"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid symbol format."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/news": {
+      "get": {
+        "summary": "Retrieves news related to a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve the latest news articles for a specific stock symbol.",
+        "operationId": "GetNews",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve news.",
+            "required": true,
+            "example": "BAC",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Latest news articles for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "link": {
+                        "type": "string"
+                      },
+                      "providerPublishTime": {
+                        "type": "integer"
+                      },
+                      "publisher": {
+                        "type": "string"
+                      },
+                      "relatedTickers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "uuid": {
+                        "type": "string"
+                      },
+                      "thumbnail": {
+                        "type": "object",
+                        "properties": {
+                          "resolutions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "height": {
+                                  "type": "integer"
+                                },
+                                "tag": {
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "type": "string"
+                                },
+                                "width": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "height",
+                                "tag",
+                                "url",
+                                "width"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "resolutions"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "link",
+                      "providerPublishTime",
+                      "publisher",
+                      "relatedTickers",
+                      "title",
+                      "type",
+                      "uuid",
+                      "thumbnail"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/recommendations": {
+      "get": {
+        "summary": "Retrieves stock recommendations for a given symbol.",
+        "deprecated": false,
+        "description": "Retrieve analyst recommendations for a specific stock symbol.",
+        "operationId": "GetRecommendations",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve recommendations.",
+            "required": true,
+            "example": "USB",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Analyst recommendations for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "period": {
+                        "type": "string"
+                      },
+                      "strongBuy": {
+                        "type": "integer"
+                      },
+                      "buy": {
+                        "type": "integer"
+                      },
+                      "hold": {
+                        "type": "integer"
+                      },
+                      "sell": {
+                        "type": "integer"
+                      },
+                      "strongSell": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "period",
+                      "strongBuy",
+                      "buy",
+                      "hold",
+                      "sell",
+                      "strongSell"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/upgrades-downgrades": {
+      "get": {
+        "summary": "Retrieves upgrades and downgrades for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve historical upgrade and downgrade actions for a specific stock symbol.",
+        "operationId": "GetUpgradesDowngrades",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve upgrade and downgrade actions.",
+            "required": true,
+            "example": "WFC",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Historical upgrade and downgrade actions for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date": {
+                        "type": "string"
+                      },
+                      "Firm": {
+                        "type": "string"
+                      },
+                      "ToGrade": {
+                        "type": "string"
+                      },
+                      "FromGrade": {
+                        "type": "string"
+                      },
+                      "Action": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "Date",
+                      "Firm",
+                      "ToGrade",
+                      "FromGrade",
+                      "Action"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/targets": {
+      "get": {
+        "summary": "Retrieve targets for a stock symbol",
+        "operationId": "getTargets",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "description": "The stock symbol to retrieve targets for",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with price targets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-02-02 00:00:00"
+                      },
+                      "Status": {
+                        "type": "string",
+                        "example": "Reiterated"
+                      },
+                      "Outer": {
+                        "type": "string",
+                        "example": "Piper Sandler"
+                      },
+                      "Rating": {
+                        "type": "string",
+                        "example": "Neutral"
+                      },
+                      "Price": {
+                        "type": "string",
+                        "example": "$205 → $190",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "Date",
+                      "Status",
+                      "Outer",
+                      "Rating",
+                      "Price"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request or error in fetching price targets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No price target updates available or stock symbol not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/actions": {
+      "get": {
+        "summary": "Retrieves historical actions related to a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve a list of historical actions such as dividends, stock splits, and other corporate actions for a specific stock symbol.",
+        "operationId": "GetActions",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve historical actions.",
+            "required": true,
+            "example": "INTC",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Historical corporate actions for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "index": {
+                        "type": "integer"
+                      },
+                      "Date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "Time": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "Dividends": {
+                        "type": [
+                          "integer",
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "Stock Splits": {
+                        "type": [
+                          "integer",
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "index",
+                      "Date",
+                      "Time",
+                      "Dividends",
+                      "Stock Splits"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/earnings-dates": {
+      "get": {
+        "summary": "Retrieves earnings report dates for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve a list of scheduled and historical earnings report dates for a specific stock symbol.",
+        "operationId": "GetEarningsDates",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve earnings report dates.",
+            "required": true,
+            "example": "TSLA",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Earnings report dates for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Earnings Date": {
+                        "type": "string"
+                      },
+                      "EPS Estimate": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "Reported EPS": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "Surprise(%)": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "Earnings Date",
+                      "EPS Estimate",
+                      "Reported EPS",
+                      "Surprise(%)"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/institutional-holders": {
+      "get": {
+        "summary": "Retrieves top institutional holders for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve a list of top institutional holders, including their holdings and related information, for a specific stock symbol.",
+        "operationId": "GetInstitutionalHolders",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve top institutional holders.",
+            "required": true,
+            "example": "AAPL",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Top institutional holders for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date Reported": {
+                        "type": "string"
+                      },
+                      "Holder": {
+                        "type": "string"
+                      },
+                      "pctHeld": {
+                        "type": "number"
+                      },
+                      "Shares": {
+                        "type": "integer"
+                      },
+                      "Value": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "Date Reported",
+                      "Holder",
+                      "pctHeld",
+                      "Shares",
+                      "Value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/mutualfund-holders": {
+      "get": {
+        "summary": "Retrieves top mutual fund holders for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve a list of top mutual fund holders, including their holdings and related information, for a specific stock symbol.",
+        "operationId": "GetMutualfundHolders",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve top mutual fund holders.",
+            "required": true,
+            "example": "MSFT",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Top mutual fund holders for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date Reported": {
+                        "type": "string"
+                      },
+                      "Holder": {
+                        "type": "string"
+                      },
+                      "pctHeld": {
+                        "type": "number"
+                      },
+                      "Shares": {
+                        "type": "integer"
+                      },
+                      "Value": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "Date Reported",
+                      "Holder",
+                      "pctHeld",
+                      "Shares",
+                      "Value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/insider-roster": {
+      "get": {
+        "summary": "Retrieves insider roster holders for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve a list of insider roster holders, including their holdings and related information, for a specific stock symbol.",
+        "operationId": "GetInsiderRoster",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve insider roster holders.",
+            "required": true,
+            "example": "NVDA",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Insider roster holders for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Name": {
+                        "type": "string"
+                      },
+                      "Position": {
+                        "type": "string"
+                      },
+                      "URL": {
+                        "type": "string"
+                      },
+                      "Most Recent Transaction": {
+                        "type": "string"
+                      },
+                      "Latest Transaction Date": {
+                        "type": "string"
+                      },
+                      "Shares Owned Directly": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "Position Direct Date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "Shares Owned Indirectly": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "Position Indirect Date": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "Name",
+                      "Position",
+                      "URL",
+                      "Most Recent Transaction",
+                      "Latest Transaction Date",
+                      "Shares Owned Directly",
+                      "Position Direct Date",
+                      "Shares Owned Indirectly",
+                      "Position Indirect Date"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/v1/quotes/{symbol}/insider-transactions": {
+      "get": {
+        "summary": "Retrieves insider transactions for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve a list of recent insider transactions, including details about the transaction, for a specific stock symbol.",
+        "operationId": "GetInsiderTransactions",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve insider transactions.",
+            "required": true,
+            "example": "META",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recent insider transactions for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Shares": {
+                        "type": "integer"
+                      },
+                      "Value": {
+                        "type": "integer"
+                      },
+                      "URL": {
+                        "type": "string"
+                      },
+                      "Text": {
+                        "type": "string"
+                      },
+                      "Insider": {
+                        "type": "string"
+                      },
+                      "Position": {
+                        "type": "string"
+                      },
+                      "Transaction": {
+                        "type": "string"
+                      },
+                      "Start Date": {
+                        "type": "string"
+                      },
+                      "Ownership": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "Shares",
+                      "Value",
+                      "URL",
+                      "Text",
+                      "Insider",
+                      "Position",
+                      "Transaction",
+                      "Start Date",
+                      "Ownership"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/v1/quotes/{symbol}/{periodicity}/income-statement": {
+      "get": {
+        "summary": "Retrieves annual or quarterly income statements for a given stock symbol.",
+        "description": "Retrieve detailed annual or quarterly financial income statements for a specific stock symbol. The {periodicity} path parameter should be either 'annual' or 'quarterly'.",
+        "operationId": "GetIncomeStatement",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve annual or quarterly income statements.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "AMZN"
+            }
+          },
+          {
+            "name": "periodicity",
+            "in": "path",
+            "description": "Specifies the periodicity of the income statement data. Can be either 'annual' or 'quarterly'.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "annual",
+                "quarterly"
+              ],
+              "example": "annual"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Annual or Quarterly income statements for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date": {
+                        "type": "string"
+                      },
+                      "TaxEffectOfUnusualItems": {
+                        "type": "integer"
+                      },
+                      "TaxRateForCalcs": {
+                        "type": "number"
+                      },
+                      "NormalizedEBITDA": {
+                        "type": "integer"
+                      },
+                      "TotalUnusualItems": {
+                        "type": "integer"
+                      },
+                      "TotalUnusualItemsExcludingGoodwill": {
+                        "type": "integer"
+                      },
+                      "NetIncomeFromContinuingOperationNetMinorityInterest": {
+                        "type": "integer"
+                      },
+                      "ReconciledDepreciation": {
+                        "type": "integer"
+                      },
+                      "ReconciledCostOfRevenue": {
+                        "type": "integer"
+                      },
+                      "EBITDA": {
+                        "type": "integer"
+                      },
+                      "EBIT": {
+                        "type": "integer"
+                      },
+                      "NetInterestIncome": {
+                        "type": "integer"
+                      },
+                      "InterestIncome": {
+                        "type": "integer"
+                      },
+                      "NormalizedIncome": {
+                        "type": "integer"
+                      },
+                      "NetIncomeFromContinuingAndDiscontinuedOperation": {
+                        "type": "integer"
+                      },
+                      "TotalExpenses": {
+                        "type": "integer"
+                      },
+                      "TotalOperatingIncomeAsReported": {
+                        "type": "integer"
+                      },
+                      "DilutedAverageShares": {
+                        "type": "integer"
+                      },
+                      "BasicAverageShares": {
+                        "type": "integer"
+                      },
+                      "DilutedEPS": {
+                        "type": "number"
+                      },
+                      "BasicEPS": {
+                        "type": "number"
+                      },
+                      "DilutedNIAvailtoComStockholders": {
+                        "type": "integer"
+                      },
+                      "NetIncomeCommonStockholders": {
+                        "type": "integer"
+                      },
+                      "OtherunderPreferredStockDividend": {
+                        "type": "integer"
+                      },
+                      "NetIncome": {
+                        "type": "integer"
+                      },
+                      "NetIncomeIncludingNoncontrollingInterests": {
+                        "type": "integer"
+                      },
+                      "NetIncomeContinuousOperations": {
+                        "type": "integer"
+                      },
+                      "TaxProvision": {
+                        "type": "integer"
+                      },
+                      "PretaxIncome": {
+                        "type": "integer"
+                      },
+                      "OtherIncomeExpense": {
+                        "type": "integer"
+                      },
+                      "OtherNonOperatingIncomeExpenses": {
+                        "type": "integer"
+                      },
+                      "GainOnSaleOfSecurity": {
+                        "type": "integer"
+                      },
+                      "NetNonOperatingInterestIncomeExpense": {
+                        "type": "integer"
+                      },
+                      "TotalOtherFinanceCost": {
+                        "type": "integer"
+                      },
+                      "InterestIncomeNonOperating": {
+                        "type": "integer"
+                      },
+                      "OperatingIncome": {
+                        "type": "integer"
+                      },
+                      "OperatingExpense": {
+                        "type": "integer"
+                      },
+                      "ResearchAndDevelopment": {
+                        "type": "integer"
+                      },
+                      "SellingGeneralAndAdministration": {
+                        "type": "integer"
+                      },
+                      "SellingAndMarketingExpense": {
+                        "type": "integer"
+                      },
+                      "GeneralAndAdministrativeExpense": {
+                        "type": "integer"
+                      },
+                      "OtherGandA": {
+                        "type": "integer"
+                      },
+                      "GrossProfit": {
+                        "type": "integer"
+                      },
+                      "CostOfRevenue": {
+                        "type": "integer"
+                      },
+                      "TotalRevenue": {
+                        "type": "integer"
+                      },
+                      "OperatingRevenue": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/{periodicity}/balance-sheet": {
+      "get": {
+        "summary": "Retrieves annual or quarterly balance sheets for a given stock symbol.",
+        "description": "Retrieve detailed annual or quarterly financial balance sheet data for a specific stock symbol. The {periodicity} path parameter should be either 'annual' or 'quarterly'.",
+        "operationId": "GetBalanceSheet",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve annual or quarterly balance sheet data.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "META"
+            }
+          },
+          {
+            "name": "periodicity",
+            "in": "path",
+            "description": "Specifies the periodicity of the balance sheet data. Can be either 'annual' or 'quarterly'.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "annual",
+                "quarterly"
+              ],
+              "example": "quarterly"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Annual or Quarterly balance sheet data for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date": {
+                        "type": "string"
+                      },
+                      "TreasurySharesNumber": {
+                        "type": "integer"
+                      },
+                      "OrdinarySharesNumber": {
+                        "type": "integer"
+                      },
+                      "ShareIssued": {
+                        "type": "integer"
+                      },
+                      "NetDebt": {
+                        "type": "integer"
+                      },
+                      "TotalDebt": {
+                        "type": "integer"
+                      },
+                      "TangibleBookValue": {
+                        "type": "integer"
+                      },
+                      "InvestedCapital": {
+                        "type": "integer"
+                      },
+                      "WorkingCapital": {
+                        "type": "integer"
+                      },
+                      "NetTangibleAssets": {
+                        "type": "integer"
+                      },
+                      "CommonStockEquity": {
+                        "type": "integer"
+                      },
+                      "TotalCapitalization": {
+                        "type": "integer"
+                      },
+                      "TotalEquityGrossMinorityInterest": {
+                        "type": "integer"
+                      },
+                      "StockholdersEquity": {
+                        "type": "integer"
+                      },
+                      "GainsLossesNotAffectingRetainedEarnings": {
+                        "type": "integer"
+                      },
+                      "RetainedEarnings": {
+                        "type": "integer"
+                      },
+                      "CapitalStock": {
+                        "type": "integer"
+                      },
+                      "CommonStock": {
+                        "type": "integer"
+                      },
+                      "TotalLiabilitiesNetMinorityInterest": {
+                        "type": "integer"
+                      },
+                      "TotalNonCurrentLiabilitiesNetMinorityInterest": {
+                        "type": "integer"
+                      },
+                      "OtherNonCurrentLiabilities": {
+                        "type": "integer"
+                      },
+                      "TradeandOtherPayablesNonCurrent": {
+                        "type": "integer"
+                      },
+                      "LongTermDebtAndCapitalLeaseObligation": {
+                        "type": "integer"
+                      },
+                      "LongTermDebt": {
+                        "type": "integer"
+                      },
+                      "CurrentLiabilities": {
+                        "type": "integer"
+                      },
+                      "OtherCurrentLiabilities": {
+                        "type": "integer"
+                      },
+                      "CurrentDeferredLiabilities": {
+                        "type": "integer"
+                      },
+                      "CurrentDeferredRevenue": {
+                        "type": "integer"
+                      },
+                      "CurrentDebtAndCapitalLeaseObligation": {
+                        "type": "integer"
+                      },
+                      "CurrentDebt": {
+                        "type": "integer"
+                      },
+                      "OtherCurrentBorrowings": {
+                        "type": "integer"
+                      },
+                      "CommercialPaper": {
+                        "type": "integer"
+                      },
+                      "PayablesAndAccruedExpenses": {
+                        "type": "integer"
+                      },
+                      "Payables": {
+                        "type": "integer"
+                      },
+                      "AccountsPayable": {
+                        "type": "integer"
+                      },
+                      "TotalAssets": {
+                        "type": "integer"
+                      },
+                      "TotalNonCurrentAssets": {
+                        "type": "integer"
+                      },
+                      "OtherNonCurrentAssets": {
+                        "type": "integer"
+                      },
+                      "NonCurrentDeferredAssets": {
+                        "type": "integer"
+                      },
+                      "NonCurrentDeferredTaxesAssets": {
+                        "type": "integer"
+                      },
+                      "InvestmentsAndAdvances": {
+                        "type": "integer"
+                      },
+                      "OtherInvestments": {
+                        "type": "integer"
+                      },
+                      "InvestmentinFinancialAssets": {
+                        "type": "integer"
+                      },
+                      "AvailableForSaleSecurities": {
+                        "type": "integer"
+                      },
+                      "NetPPE": {
+                        "type": "integer"
+                      },
+                      "AccumulatedDepreciation": {
+                        "type": "integer"
+                      },
+                      "GrossPPE": {
+                        "type": "integer"
+                      },
+                      "Leases": {
+                        "type": "integer"
+                      },
+                      "MachineryFurnitureEquipment": {
+                        "type": "integer"
+                      },
+                      "LandAndImprovements": {
+                        "type": "integer"
+                      },
+                      "Properties": {
+                        "type": "integer"
+                      },
+                      "CurrentAssets": {
+                        "type": "integer"
+                      },
+                      "OtherCurrentAssets": {
+                        "type": "integer"
+                      },
+                      "Inventory": {
+                        "type": "integer"
+                      },
+                      "FinishedGoods": {
+                        "type": "integer"
+                      },
+                      "RawMaterials": {
+                        "type": "integer"
+                      },
+                      "Receivables": {
+                        "type": "integer"
+                      },
+                      "OtherReceivables": {
+                        "type": "integer"
+                      },
+                      "AccountsReceivable": {
+                        "type": "integer"
+                      },
+                      "CashCashEquivalentsAndShortTermInvestments": {
+                        "type": "integer"
+                      },
+                      "OtherShortTermInvestments": {
+                        "type": "integer"
+                      },
+                      "CashAndCashEquivalents": {
+                        "type": "integer"
+                      },
+                      "CashEquivalents": {
+                        "type": "integer"
+                      },
+                      "CashFinancial": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/{periodicity}/cash-flow": {
+      "get": {
+        "summary": "Retrieves annual or quarterly cash flow data for a given stock symbol.",
+        "description": "Retrieve detailed annual or quarterly cash flow statements for a specific stock symbol. The {periodicity} path parameter should be either 'annual' or 'quarterly'.",
+        "operationId": "GetCashFlow",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve annual or quarterly cash flow data.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "GOOGL"
+            }
+          },
+          {
+            "name": "periodicity",
+            "in": "path",
+            "description": "Specifies the periodicity of the cash flow data. Can be either 'annual' or 'quarterly'.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "annual",
+                "quarterly"
+              ],
+              "example": "quarterly"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Annual or Quarterly cash flow data for the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Date": {
+                        "type": "string"
+                      },
+                      "FreeCashFlow": {
+                        "type": "integer"
+                      },
+                      "RepurchaseOfCapitalStock": {
+                        "type": "integer"
+                      },
+                      "RepaymentOfDebt": {
+                        "type": "integer"
+                      },
+                      "IssuanceOfDebt": {
+                        "type": "integer"
+                      },
+                      "IssuanceOfCapitalStock": {
+                        "type": "integer"
+                      },
+                      "CapitalExpenditure": {
+                        "type": "integer"
+                      },
+                      "EndCashPosition": {
+                        "type": "integer"
+                      },
+                      "BeginningCashPosition": {
+                        "type": "integer"
+                      },
+                      "EffectOfExchangeRateChanges": {
+                        "type": "integer"
+                      },
+                      "ChangesInCash": {
+                        "type": "integer"
+                      },
+                      "FinancingCashFlow": {
+                        "type": "integer"
+                      },
+                      "CashFlowFromContinuingFinancingActivities": {
+                        "type": "integer"
+                      },
+                      "NetOtherFinancingCharges": {
+                        "type": "integer"
+                      },
+                      "CashDividendsPaid": {
+                        "type": "integer"
+                      },
+                      "CommonStockDividendPaid": {
+                        "type": "integer"
+                      },
+                      "NetCommonStockIssuance": {
+                        "type": "integer"
+                      },
+                      "CommonStockPayments": {
+                        "type": "integer"
+                      },
+                      "CommonStockIssuance": {
+                        "type": "integer"
+                      },
+                      "NetIssuancePaymentsOfDebt": {
+                        "type": "integer"
+                      },
+                      "NetShortTermDebtIssuance": {
+                        "type": "integer"
+                      },
+                      "ShortTermDebtIssuance": {
+                        "type": "integer"
+                      },
+                      "NetLongTermDebtIssuance": {
+                        "type": "integer"
+                      },
+                      "LongTermDebtPayments": {
+                        "type": "integer"
+                      },
+                      "LongTermDebtIssuance": {
+                        "type": "integer"
+                      },
+                      "InvestingCashFlow": {
+                        "type": "integer"
+                      },
+                      "CashFlowFromContinuingInvestingActivities": {
+                        "type": "integer"
+                      },
+                      "NetOtherInvestingChanges": {
+                        "type": "integer"
+                      },
+                      "NetInvestmentPurchaseAndSale": {
+                        "type": "integer"
+                      },
+                      "SaleOfInvestment": {
+                        "type": "integer"
+                      },
+                      "PurchaseOfInvestment": {
+                        "type": "integer"
+                      },
+                      "NetBusinessPurchaseAndSale": {
+                        "type": "integer"
+                      },
+                      "PurchaseOfBusiness": {
+                        "type": "integer"
+                      },
+                      "NetPPEPurchaseAndSale": {
+                        "type": "integer"
+                      },
+                      "PurchaseOfPPE": {
+                        "type": "integer"
+                      },
+                      "OperatingCashFlow": {
+                        "type": "integer"
+                      },
+                      "CashFlowFromContinuingOperatingActivities": {
+                        "type": "integer"
+                      },
+                      "ChangeInWorkingCapital": {
+                        "type": "integer"
+                      },
+                      "ChangeInOtherWorkingCapital": {
+                        "type": "integer"
+                      },
+                      "ChangeInOtherCurrentLiabilities": {
+                        "type": "integer"
+                      },
+                      "ChangeInOtherCurrentAssets": {
+                        "type": "integer"
+                      },
+                      "ChangeInPayablesAndAccruedExpense": {
+                        "type": "integer"
+                      },
+                      "ChangeInPayable": {
+                        "type": "integer"
+                      },
+                      "ChangeInAccountPayable": {
+                        "type": "integer"
+                      },
+                      "ChangeInInventory": {
+                        "type": "integer"
+                      },
+                      "ChangeInReceivables": {
+                        "type": "integer"
+                      },
+                      "ChangesInAccountReceivables": {
+                        "type": "integer"
+                      },
+                      "StockBasedCompensation": {
+                        "type": "integer"
+                      },
+                      "DeferredTax": {
+                        "type": "integer"
+                      },
+                      "DeferredIncomeTax": {
+                        "type": "integer"
+                      },
+                      "DepreciationAmortizationDepletion": {
+                        "type": "integer"
+                      },
+                      "DepreciationAndAmortization": {
+                        "type": "integer"
+                      },
+                      "Depreciation": {
+                        "type": "integer"
+                      },
+                      "OperatingGainsLosses": {
+                        "type": "integer"
+                      },
+                      "NetIncomeFromContinuingOperations": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/multiple": {
+      "get": {
+        "summary": "Retrieves multiple stock quotes",
+        "deprecated": false,
+        "description": "Fetches stock quotes for given symbols with specified fields.",
+        "operationId": "GetMultiple",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "Comma-separated list of stock symbols (e.g., AAPL,MSFT).",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response (e.g., shortName,open,marketCap).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of stock quotes with specified fields.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "AMD": {
+                      "type": "object",
+                      "properties": {
+                        "52WeekChange": {
+                          "type": "number"
+                        },
+                        "SandP52WeekChange": {
+                          "type": "number"
+                        },
+                        "address1": {
+                          "type": "string"
+                        },
+                        "ask": {
+                          "type": "number"
+                        },
+                        "askSize": {
+                          "type": "integer"
+                        },
+                        "auditRisk": {
+                          "type": "integer"
+                        },
+                        "averageDailyVolume10Day": {
+                          "type": "integer"
+                        },
+                        "averageVolume": {
+                          "type": "integer"
+                        },
+                        "averageVolume10days": {
+                          "type": "integer"
+                        },
+                        "beta": {
+                          "type": "number"
+                        },
+                        "bid": {
+                          "type": "number"
+                        },
+                        "bidSize": {
+                          "type": "integer"
+                        },
+                        "boardRisk": {
+                          "type": "integer"
+                        },
+                        "bookValue": {
+                          "type": "number"
+                        },
+                        "city": {
+                          "type": "string"
+                        },
+                        "companyOfficers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "age": {
+                                "type": "integer"
+                              },
+                              "exercisedValue": {
+                                "type": "integer"
+                              },
+                              "fiscalYear": {
+                                "type": "integer"
+                              },
+                              "maxAge": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "totalPay": {
+                                "type": "integer"
+                              },
+                              "unexercisedValue": {
+                                "type": "integer"
+                              },
+                              "yearBorn": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "age",
+                              "exercisedValue",
+                              "fiscalYear",
+                              "maxAge",
+                              "name",
+                              "title",
+                              "totalPay",
+                              "unexercisedValue",
+                              "yearBorn"
+                            ]
+                          }
+                        },
+                        "compensationAsOfEpochDate": {
+                          "type": "integer"
+                        },
+                        "compensationRisk": {
+                          "type": "integer"
+                        },
+                        "country": {
+                          "type": "string"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "currentPrice": {
+                          "type": "number"
+                        },
+                        "currentRatio": {
+                          "type": "number"
+                        },
+                        "dateShortInterest": {
+                          "type": "integer"
+                        },
+                        "dayHigh": {
+                          "type": "number"
+                        },
+                        "dayLow": {
+                          "type": "number"
+                        },
+                        "debtToEquity": {
+                          "type": "number"
+                        },
+                        "earningsGrowth": {
+                          "type": "number"
+                        },
+                        "earningsQuarterlyGrowth": {
+                          "type": "number"
+                        },
+                        "ebitda": {
+                          "type": "integer"
+                        },
+                        "ebitdaMargins": {
+                          "type": "number"
+                        },
+                        "enterpriseToEbitda": {
+                          "type": "number"
+                        },
+                        "enterpriseToRevenue": {
+                          "type": "number"
+                        },
+                        "enterpriseValue": {
+                          "type": "integer"
+                        },
+                        "exDividendDate": {
+                          "type": "integer"
+                        },
+                        "exchange": {
+                          "type": "string"
+                        },
+                        "fiftyDayAverage": {
+                          "type": "number"
+                        },
+                        "fiftyTwoWeekHigh": {
+                          "type": "number"
+                        },
+                        "fiftyTwoWeekLow": {
+                          "type": "number"
+                        },
+                        "financialCurrency": {
+                          "type": "string"
+                        },
+                        "firstTradeDateEpochUtc": {
+                          "type": "integer"
+                        },
+                        "floatShares": {
+                          "type": "integer"
+                        },
+                        "forwardEps": {
+                          "type": "number"
+                        },
+                        "forwardPE": {
+                          "type": "number"
+                        },
+                        "freeCashflow": {
+                          "type": "integer"
+                        },
+                        "fullTimeEmployees": {
+                          "type": "integer"
+                        },
+                        "gmtOffSetMilliseconds": {
+                          "type": "integer"
+                        },
+                        "governanceEpochDate": {
+                          "type": "integer"
+                        },
+                        "grossMargins": {
+                          "type": "number"
+                        },
+                        "heldPercentInsiders": {
+                          "type": "number"
+                        },
+                        "heldPercentInstitutions": {
+                          "type": "number"
+                        },
+                        "impliedSharesOutstanding": {
+                          "type": "integer"
+                        },
+                        "industry": {
+                          "type": "string"
+                        },
+                        "industryDisp": {
+                          "type": "string"
+                        },
+                        "industryKey": {
+                          "type": "string"
+                        },
+                        "lastFiscalYearEnd": {
+                          "type": "integer"
+                        },
+                        "lastSplitDate": {
+                          "type": "integer"
+                        },
+                        "lastSplitFactor": {
+                          "type": "string"
+                        },
+                        "longBusinessSummary": {
+                          "type": "string"
+                        },
+                        "longName": {
+                          "type": "string"
+                        },
+                        "marketCap": {
+                          "type": "integer"
+                        },
+                        "maxAge": {
+                          "type": "integer"
+                        },
+                        "messageBoardId": {
+                          "type": "string"
+                        },
+                        "mostRecentQuarter": {
+                          "type": "integer"
+                        },
+                        "netIncomeToCommon": {
+                          "type": "integer"
+                        },
+                        "nextFiscalYearEnd": {
+                          "type": "integer"
+                        },
+                        "numberOfAnalystOpinions": {
+                          "type": "integer"
+                        },
+                        "open": {
+                          "type": "number"
+                        },
+                        "operatingCashflow": {
+                          "type": "integer"
+                        },
+                        "operatingMargins": {
+                          "type": "number"
+                        },
+                        "overallRisk": {
+                          "type": "integer"
+                        },
+                        "pegRatio": {
+                          "type": "number"
+                        },
+                        "phone": {
+                          "type": "string"
+                        },
+                        "previousClose": {
+                          "type": "number"
+                        },
+                        "priceHint": {
+                          "type": "integer"
+                        },
+                        "priceToBook": {
+                          "type": "number"
+                        },
+                        "priceToSalesTrailing12Months": {
+                          "type": "number"
+                        },
+                        "profitMargins": {
+                          "type": "number"
+                        },
+                        "quickRatio": {
+                          "type": "number"
+                        },
+                        "quoteType": {
+                          "type": "string"
+                        },
+                        "recommendationKey": {
+                          "type": "string"
+                        },
+                        "recommendationMean": {
+                          "type": "number"
+                        },
+                        "regularMarketDayHigh": {
+                          "type": "number"
+                        },
+                        "regularMarketDayLow": {
+                          "type": "number"
+                        },
+                        "regularMarketOpen": {
+                          "type": "number"
+                        },
+                        "regularMarketPreviousClose": {
+                          "type": "number"
+                        },
+                        "regularMarketVolume": {
+                          "type": "integer"
+                        },
+                        "returnOnAssets": {
+                          "type": "number"
+                        },
+                        "returnOnEquity": {
+                          "type": "number"
+                        },
+                        "revenueGrowth": {
+                          "type": "number"
+                        },
+                        "revenuePerShare": {
+                          "type": "number"
+                        },
+                        "sector": {
+                          "type": "string"
+                        },
+                        "sectorDisp": {
+                          "type": "string"
+                        },
+                        "sectorKey": {
+                          "type": "string"
+                        },
+                        "shareHolderRightsRisk": {
+                          "type": "integer"
+                        },
+                        "sharesOutstanding": {
+                          "type": "integer"
+                        },
+                        "sharesPercentSharesOut": {
+                          "type": "number"
+                        },
+                        "sharesShort": {
+                          "type": "integer"
+                        },
+                        "sharesShortPreviousMonthDate": {
+                          "type": "integer"
+                        },
+                        "sharesShortPriorMonth": {
+                          "type": "integer"
+                        },
+                        "shortName": {
+                          "type": "string"
+                        },
+                        "shortPercentOfFloat": {
+                          "type": "number"
+                        },
+                        "shortRatio": {
+                          "type": "number"
+                        },
+                        "state": {
+                          "type": "string"
+                        },
+                        "symbol": {
+                          "type": "string"
+                        },
+                        "targetHighPrice": {
+                          "type": "number"
+                        },
+                        "targetLowPrice": {
+                          "type": "number"
+                        },
+                        "targetMeanPrice": {
+                          "type": "number"
+                        },
+                        "targetMedianPrice": {
+                          "type": "number"
+                        },
+                        "timeZoneFullName": {
+                          "type": "string"
+                        },
+                        "timeZoneShortName": {
+                          "type": "string"
+                        },
+                        "totalCash": {
+                          "type": "integer"
+                        },
+                        "totalCashPerShare": {
+                          "type": "number"
+                        },
+                        "totalDebt": {
+                          "type": "integer"
+                        },
+                        "totalRevenue": {
+                          "type": "integer"
+                        },
+                        "trailingEps": {
+                          "type": "number"
+                        },
+                        "trailingPE": {
+                          "type": "number"
+                        },
+                        "trailingPegRatio": {
+                          "type": "number"
+                        },
+                        "twoHundredDayAverage": {
+                          "type": "number"
+                        },
+                        "underlyingSymbol": {
+                          "type": "string"
+                        },
+                        "uuid": {
+                          "type": "string"
+                        },
+                        "volume": {
+                          "type": "integer"
+                        },
+                        "website": {
+                          "type": "string"
+                        },
+                        "zip": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "52WeekChange",
+                        "SandP52WeekChange",
+                        "address1",
+                        "ask",
+                        "askSize",
+                        "auditRisk",
+                        "averageDailyVolume10Day",
+                        "averageVolume",
+                        "averageVolume10days",
+                        "beta",
+                        "bid",
+                        "bidSize",
+                        "boardRisk",
+                        "bookValue",
+                        "city",
+                        "companyOfficers",
+                        "compensationAsOfEpochDate",
+                        "compensationRisk",
+                        "country",
+                        "currency",
+                        "currentPrice",
+                        "currentRatio",
+                        "dateShortInterest",
+                        "dayHigh",
+                        "dayLow",
+                        "debtToEquity",
+                        "earningsGrowth",
+                        "earningsQuarterlyGrowth",
+                        "ebitda",
+                        "ebitdaMargins",
+                        "enterpriseToEbitda",
+                        "enterpriseToRevenue",
+                        "enterpriseValue",
+                        "exDividendDate",
+                        "exchange",
+                        "fiftyDayAverage",
+                        "fiftyTwoWeekHigh",
+                        "fiftyTwoWeekLow",
+                        "financialCurrency",
+                        "firstTradeDateEpochUtc",
+                        "floatShares",
+                        "forwardEps",
+                        "forwardPE",
+                        "freeCashflow",
+                        "fullTimeEmployees",
+                        "gmtOffSetMilliseconds",
+                        "governanceEpochDate",
+                        "grossMargins",
+                        "heldPercentInsiders",
+                        "heldPercentInstitutions",
+                        "impliedSharesOutstanding",
+                        "industry",
+                        "industryDisp",
+                        "industryKey",
+                        "lastFiscalYearEnd",
+                        "lastSplitDate",
+                        "lastSplitFactor",
+                        "longBusinessSummary",
+                        "longName",
+                        "marketCap",
+                        "maxAge",
+                        "messageBoardId",
+                        "mostRecentQuarter",
+                        "netIncomeToCommon",
+                        "nextFiscalYearEnd",
+                        "numberOfAnalystOpinions",
+                        "open",
+                        "operatingCashflow",
+                        "operatingMargins",
+                        "overallRisk",
+                        "pegRatio",
+                        "phone",
+                        "previousClose",
+                        "priceHint",
+                        "priceToBook",
+                        "priceToSalesTrailing12Months",
+                        "profitMargins",
+                        "quickRatio",
+                        "quoteType",
+                        "recommendationKey",
+                        "recommendationMean",
+                        "regularMarketDayHigh",
+                        "regularMarketDayLow",
+                        "regularMarketOpen",
+                        "regularMarketPreviousClose",
+                        "regularMarketVolume",
+                        "returnOnAssets",
+                        "returnOnEquity",
+                        "revenueGrowth",
+                        "revenuePerShare",
+                        "sector",
+                        "sectorDisp",
+                        "sectorKey",
+                        "shareHolderRightsRisk",
+                        "sharesOutstanding",
+                        "sharesPercentSharesOut",
+                        "sharesShort",
+                        "sharesShortPreviousMonthDate",
+                        "sharesShortPriorMonth",
+                        "shortName",
+                        "shortPercentOfFloat",
+                        "shortRatio",
+                        "state",
+                        "symbol",
+                        "targetHighPrice",
+                        "targetLowPrice",
+                        "targetMeanPrice",
+                        "targetMedianPrice",
+                        "timeZoneFullName",
+                        "timeZoneShortName",
+                        "totalCash",
+                        "totalCashPerShare",
+                        "totalDebt",
+                        "totalRevenue",
+                        "trailingEps",
+                        "trailingPE",
+                        "trailingPegRatio",
+                        "twoHundredDayAverage",
+                        "underlyingSymbol",
+                        "uuid",
+                        "volume",
+                        "website",
+                        "zip"
+                      ]
+                    },
+                    "INTC": {
+                      "type": "object",
+                      "properties": {
+                        "52WeekChange": {
+                          "type": "number"
+                        },
+                        "SandP52WeekChange": {
+                          "type": "number"
+                        },
+                        "address1": {
+                          "type": "string"
+                        },
+                        "ask": {
+                          "type": "number"
+                        },
+                        "askSize": {
+                          "type": "integer"
+                        },
+                        "auditRisk": {
+                          "type": "integer"
+                        },
+                        "averageDailyVolume10Day": {
+                          "type": "integer"
+                        },
+                        "averageVolume": {
+                          "type": "integer"
+                        },
+                        "averageVolume10days": {
+                          "type": "integer"
+                        },
+                        "beta": {
+                          "type": "number"
+                        },
+                        "bid": {
+                          "type": "number"
+                        },
+                        "bidSize": {
+                          "type": "integer"
+                        },
+                        "boardRisk": {
+                          "type": "integer"
+                        },
+                        "bookValue": {
+                          "type": "number"
+                        },
+                        "city": {
+                          "type": "string"
+                        },
+                        "companyOfficers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "age": {
+                                "type": "integer"
+                              },
+                              "exercisedValue": {
+                                "type": "integer"
+                              },
+                              "fiscalYear": {
+                                "type": "integer"
+                              },
+                              "maxAge": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "totalPay": {
+                                "type": "integer"
+                              },
+                              "unexercisedValue": {
+                                "type": "integer"
+                              },
+                              "yearBorn": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "age",
+                              "exercisedValue",
+                              "fiscalYear",
+                              "maxAge",
+                              "name",
+                              "title",
+                              "totalPay",
+                              "unexercisedValue",
+                              "yearBorn"
+                            ]
+                          }
+                        },
+                        "compensationAsOfEpochDate": {
+                          "type": "integer"
+                        },
+                        "compensationRisk": {
+                          "type": "integer"
+                        },
+                        "country": {
+                          "type": "string"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "currentPrice": {
+                          "type": "number"
+                        },
+                        "currentRatio": {
+                          "type": "number"
+                        },
+                        "dateShortInterest": {
+                          "type": "integer"
+                        },
+                        "dayHigh": {
+                          "type": "number"
+                        },
+                        "dayLow": {
+                          "type": "number"
+                        },
+                        "debtToEquity": {
+                          "type": "number"
+                        },
+                        "dividendRate": {
+                          "type": "number"
+                        },
+                        "dividendYield": {
+                          "type": "number"
+                        },
+                        "ebitda": {
+                          "type": "integer"
+                        },
+                        "ebitdaMargins": {
+                          "type": "number"
+                        },
+                        "enterpriseToEbitda": {
+                          "type": "number"
+                        },
+                        "enterpriseToRevenue": {
+                          "type": "number"
+                        },
+                        "enterpriseValue": {
+                          "type": "integer"
+                        },
+                        "exDividendDate": {
+                          "type": "integer"
+                        },
+                        "exchange": {
+                          "type": "string"
+                        },
+                        "fiftyDayAverage": {
+                          "type": "number"
+                        },
+                        "fiftyTwoWeekHigh": {
+                          "type": "number"
+                        },
+                        "fiftyTwoWeekLow": {
+                          "type": "number"
+                        },
+                        "financialCurrency": {
+                          "type": "string"
+                        },
+                        "firstTradeDateEpochUtc": {
+                          "type": "integer"
+                        },
+                        "fiveYearAvgDividendYield": {
+                          "type": "number"
+                        },
+                        "floatShares": {
+                          "type": "integer"
+                        },
+                        "forwardEps": {
+                          "type": "number"
+                        },
+                        "forwardPE": {
+                          "type": "number"
+                        },
+                        "freeCashflow": {
+                          "type": "integer"
+                        },
+                        "fullTimeEmployees": {
+                          "type": "integer"
+                        },
+                        "gmtOffSetMilliseconds": {
+                          "type": "integer"
+                        },
+                        "governanceEpochDate": {
+                          "type": "integer"
+                        },
+                        "grossMargins": {
+                          "type": "number"
+                        },
+                        "heldPercentInsiders": {
+                          "type": "number"
+                        },
+                        "heldPercentInstitutions": {
+                          "type": "number"
+                        },
+                        "impliedSharesOutstanding": {
+                          "type": "integer"
+                        },
+                        "industry": {
+                          "type": "string"
+                        },
+                        "industryDisp": {
+                          "type": "string"
+                        },
+                        "industryKey": {
+                          "type": "string"
+                        },
+                        "lastDividendDate": {
+                          "type": "integer"
+                        },
+                        "lastDividendValue": {
+                          "type": "number"
+                        },
+                        "lastFiscalYearEnd": {
+                          "type": "integer"
+                        },
+                        "lastSplitDate": {
+                          "type": "integer"
+                        },
+                        "lastSplitFactor": {
+                          "type": "string"
+                        },
+                        "longBusinessSummary": {
+                          "type": "string"
+                        },
+                        "longName": {
+                          "type": "string"
+                        },
+                        "marketCap": {
+                          "type": "integer"
+                        },
+                        "maxAge": {
+                          "type": "integer"
+                        },
+                        "messageBoardId": {
+                          "type": "string"
+                        },
+                        "mostRecentQuarter": {
+                          "type": "integer"
+                        },
+                        "netIncomeToCommon": {
+                          "type": "integer"
+                        },
+                        "nextFiscalYearEnd": {
+                          "type": "integer"
+                        },
+                        "numberOfAnalystOpinions": {
+                          "type": "integer"
+                        },
+                        "open": {
+                          "type": "number"
+                        },
+                        "operatingCashflow": {
+                          "type": "integer"
+                        },
+                        "operatingMargins": {
+                          "type": "number"
+                        },
+                        "overallRisk": {
+                          "type": "integer"
+                        },
+                        "payoutRatio": {
+                          "type": "number"
+                        },
+                        "pegRatio": {
+                          "type": "number"
+                        },
+                        "phone": {
+                          "type": "string"
+                        },
+                        "previousClose": {
+                          "type": "number"
+                        },
+                        "priceHint": {
+                          "type": "integer"
+                        },
+                        "priceToBook": {
+                          "type": "number"
+                        },
+                        "priceToSalesTrailing12Months": {
+                          "type": "number"
+                        },
+                        "profitMargins": {
+                          "type": "number"
+                        },
+                        "quickRatio": {
+                          "type": "number"
+                        },
+                        "quoteType": {
+                          "type": "string"
+                        },
+                        "recommendationKey": {
+                          "type": "string"
+                        },
+                        "recommendationMean": {
+                          "type": "number"
+                        },
+                        "regularMarketDayHigh": {
+                          "type": "number"
+                        },
+                        "regularMarketDayLow": {
+                          "type": "number"
+                        },
+                        "regularMarketOpen": {
+                          "type": "number"
+                        },
+                        "regularMarketPreviousClose": {
+                          "type": "number"
+                        },
+                        "regularMarketVolume": {
+                          "type": "integer"
+                        },
+                        "returnOnAssets": {
+                          "type": "number"
+                        },
+                        "returnOnEquity": {
+                          "type": "number"
+                        },
+                        "revenueGrowth": {
+                          "type": "number"
+                        },
+                        "revenuePerShare": {
+                          "type": "number"
+                        },
+                        "sector": {
+                          "type": "string"
+                        },
+                        "sectorDisp": {
+                          "type": "string"
+                        },
+                        "sectorKey": {
+                          "type": "string"
+                        },
+                        "shareHolderRightsRisk": {
+                          "type": "integer"
+                        },
+                        "sharesOutstanding": {
+                          "type": "integer"
+                        },
+                        "sharesPercentSharesOut": {
+                          "type": "number"
+                        },
+                        "sharesShort": {
+                          "type": "integer"
+                        },
+                        "sharesShortPreviousMonthDate": {
+                          "type": "integer"
+                        },
+                        "sharesShortPriorMonth": {
+                          "type": "integer"
+                        },
+                        "shortName": {
+                          "type": "string"
+                        },
+                        "shortPercentOfFloat": {
+                          "type": "number"
+                        },
+                        "shortRatio": {
+                          "type": "number"
+                        },
+                        "state": {
+                          "type": "string"
+                        },
+                        "symbol": {
+                          "type": "string"
+                        },
+                        "targetHighPrice": {
+                          "type": "number"
+                        },
+                        "targetLowPrice": {
+                          "type": "number"
+                        },
+                        "targetMeanPrice": {
+                          "type": "number"
+                        },
+                        "targetMedianPrice": {
+                          "type": "number"
+                        },
+                        "timeZoneFullName": {
+                          "type": "string"
+                        },
+                        "timeZoneShortName": {
+                          "type": "string"
+                        },
+                        "totalCash": {
+                          "type": "integer"
+                        },
+                        "totalCashPerShare": {
+                          "type": "number"
+                        },
+                        "totalDebt": {
+                          "type": "integer"
+                        },
+                        "totalRevenue": {
+                          "type": "integer"
+                        },
+                        "trailingAnnualDividendRate": {
+                          "type": "number"
+                        },
+                        "trailingAnnualDividendYield": {
+                          "type": "number"
+                        },
+                        "trailingEps": {
+                          "type": "number"
+                        },
+                        "trailingPE": {
+                          "type": "number"
+                        },
+                        "trailingPegRatio": {
+                          "type": "number"
+                        },
+                        "twoHundredDayAverage": {
+                          "type": "number"
+                        },
+                        "underlyingSymbol": {
+                          "type": "string"
+                        },
+                        "uuid": {
+                          "type": "string"
+                        },
+                        "volume": {
+                          "type": "integer"
+                        },
+                        "website": {
+                          "type": "string"
+                        },
+                        "zip": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "52WeekChange",
+                        "SandP52WeekChange",
+                        "address1",
+                        "ask",
+                        "askSize",
+                        "auditRisk",
+                        "averageDailyVolume10Day",
+                        "averageVolume",
+                        "averageVolume10days",
+                        "beta",
+                        "bid",
+                        "bidSize",
+                        "boardRisk",
+                        "bookValue",
+                        "city",
+                        "companyOfficers",
+                        "compensationAsOfEpochDate",
+                        "compensationRisk",
+                        "country",
+                        "currency",
+                        "currentPrice",
+                        "currentRatio",
+                        "dateShortInterest",
+                        "dayHigh",
+                        "dayLow",
+                        "debtToEquity",
+                        "dividendRate",
+                        "dividendYield",
+                        "ebitda",
+                        "ebitdaMargins",
+                        "enterpriseToEbitda",
+                        "enterpriseToRevenue",
+                        "enterpriseValue",
+                        "exDividendDate",
+                        "exchange",
+                        "fiftyDayAverage",
+                        "fiftyTwoWeekHigh",
+                        "fiftyTwoWeekLow",
+                        "financialCurrency",
+                        "firstTradeDateEpochUtc",
+                        "fiveYearAvgDividendYield",
+                        "floatShares",
+                        "forwardEps",
+                        "forwardPE",
+                        "freeCashflow",
+                        "fullTimeEmployees",
+                        "gmtOffSetMilliseconds",
+                        "governanceEpochDate",
+                        "grossMargins",
+                        "heldPercentInsiders",
+                        "heldPercentInstitutions",
+                        "impliedSharesOutstanding",
+                        "industry",
+                        "industryDisp",
+                        "industryKey",
+                        "lastDividendDate",
+                        "lastDividendValue",
+                        "lastFiscalYearEnd",
+                        "lastSplitDate",
+                        "lastSplitFactor",
+                        "longBusinessSummary",
+                        "longName",
+                        "marketCap",
+                        "maxAge",
+                        "messageBoardId",
+                        "mostRecentQuarter",
+                        "netIncomeToCommon",
+                        "nextFiscalYearEnd",
+                        "numberOfAnalystOpinions",
+                        "open",
+                        "operatingCashflow",
+                        "operatingMargins",
+                        "overallRisk",
+                        "payoutRatio",
+                        "pegRatio",
+                        "phone",
+                        "previousClose",
+                        "priceHint",
+                        "priceToBook",
+                        "priceToSalesTrailing12Months",
+                        "profitMargins",
+                        "quickRatio",
+                        "quoteType",
+                        "recommendationKey",
+                        "recommendationMean",
+                        "regularMarketDayHigh",
+                        "regularMarketDayLow",
+                        "regularMarketOpen",
+                        "regularMarketPreviousClose",
+                        "regularMarketVolume",
+                        "returnOnAssets",
+                        "returnOnEquity",
+                        "revenueGrowth",
+                        "revenuePerShare",
+                        "sector",
+                        "sectorDisp",
+                        "sectorKey",
+                        "shareHolderRightsRisk",
+                        "sharesOutstanding",
+                        "sharesPercentSharesOut",
+                        "sharesShort",
+                        "sharesShortPreviousMonthDate",
+                        "sharesShortPriorMonth",
+                        "shortName",
+                        "shortPercentOfFloat",
+                        "shortRatio",
+                        "state",
+                        "symbol",
+                        "targetHighPrice",
+                        "targetLowPrice",
+                        "targetMeanPrice",
+                        "targetMedianPrice",
+                        "timeZoneFullName",
+                        "timeZoneShortName",
+                        "totalCash",
+                        "totalCashPerShare",
+                        "totalDebt",
+                        "totalRevenue",
+                        "trailingAnnualDividendRate",
+                        "trailingAnnualDividendYield",
+                        "trailingEps",
+                        "trailingPE",
+                        "trailingPegRatio",
+                        "twoHundredDayAverage",
+                        "underlyingSymbol",
+                        "uuid",
+                        "volume",
+                        "website",
+                        "zip"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/technical-analysis/": {
+      "get": {
+        "summary": "Get technical analysis for a stock symbol",
+        "operationId": "getTechnicalAnalysis",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "description": "Stock symbol to retrieve technical analysis for",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "interval",
+            "in": "query",
+            "description": "Interval for technical analysis",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "INTERVAL_1_MINUTE",
+                "INTERVAL_5_MINUTES",
+                "INTERVAL_15_MINUTES",
+                "INTERVAL_30_MINUTES",
+                "INTERVAL_1_HOUR",
+                "INTERVAL_2_HOURS",
+                "INTERVAL_4_HOURS",
+                "INTERVAL_1_DAY",
+                "INTERVAL_1_WEEK",
+                "INTERVAL_1_MONTH"
+              ],
+              "default": "INTERVAL_1_MONTH"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "SYMBOL": {
+                      "type": "string",
+                      "example": "AAPL"
+                    },
+                    "Summary": {
+                      "type": "object",
+                      "properties": {
+                        "Sell": {
+                          "type": "integer"
+                        },
+                        "Neutral": {
+                          "type": "integer"
+                        },
+                        "Buy": {
+                          "type": "integer"
+                        },
+                        "Recommendation": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "Oscillators Details": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "Moving Averages Details": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/sec-filings": {
+      "get": {
+        "summary": "Retrieve SEC filings for a specific stock symbol",
+        "operationId": "getSECFilings",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "description": "The stock symbol for which to retrieve SEC filings.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of SEC filings for the given stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "acceptanceDateTime": {
+                        "type": "string",
+                        "example": "February 02, 2024 17:28:10"
+                      },
+                      "accessionNumber": {
+                        "type": "string",
+                        "example": "0001950047-24-000629"
+                      },
+                      "act": {
+                        "type": "string",
+                        "example": "33"
+                      },
+                      "fileNumber": {
+                        "type": "string",
+                        "example": "001-37845"
+                      },
+                      "filingDate": {
+                        "type": "string",
+                        "example": "Fri, 02 Feb 2024 00:00:00 GMT"
+                      },
+                      "filmNumber": {
+                        "type": "string",
+                        "example": "24592921"
+                      },
+                      "form": {
+                        "type": "string",
+                        "example": "144"
+                      },
+                      "isInlineXBRL": {
+                        "type": "integer",
+                        "example": 0
+                      },
+                      "isXBRL": {
+                        "type": "integer",
+                        "example": 0
+                      },
+                      "items": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "primaryDocDescription": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "primaryDocument": {
+                        "type": "string",
+                        "example": "xsl144X01/primary_doc.xml"
+                      },
+                      "primaryDocumentURL": {
+                        "type": "string",
+                        "example": "https://www.sec.gov/Archives/edgar/data/0000789019/000195004724000629/xsl144X01/primary_doc.xml"
+                      },
+                      "reportDate": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "size": {
+                        "type": "integer",
+                        "example": 6507
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ticker symbol not found or CIK mapping unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to fetch filings or no filings available.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/quotes/{symbol}/isin": {
+      "get": {
+        "summary": "Retrieves the ISIN (International Securities Identification Number) for a given stock symbol.",
+        "deprecated": false,
+        "description": "Retrieve the ISIN associated with a specific stock symbol.",
+        "operationId": "GetISIN",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "description": "The stock symbol for which to retrieve the ISIN.",
+            "required": true,
+            "example": "AAPL",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ISIN associated with the specified stock symbol.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ISIN": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ISIN"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  },
+  "servers": [
+    {
+      "url": "https://api.finance.sugra.ai",
+      "description": "Prod FinMarkets Env"
+    }
+  ]
+}
